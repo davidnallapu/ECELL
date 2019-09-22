@@ -1,0 +1,339 @@
+
+<section class="inner_cover parallax-window" data-parallax="scroll" data-image-src="assets/img/snuu.jpeg">
+    <div class="overlay_dark"></div>
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+                <div class="inner_cover_content">
+                    <h3>
+                        Admin Page
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<ul class="nav nav-pills justify-content-center">
+                    <li class="nav-item">
+                            <a href="#thinktank" data-toggle="pill" class="nav-link active">Think Tank</a>
+                        </li>
+
+
+                    <li class="nav-item">
+                            <a href="#event" data-toggle="pill" class="nav-link">Event</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                                <a href="#blog" data-toggle="pill" class="nav-link">Blog</a>
+                            </li>
+
+                            <li class="nav-item">
+                                    <a href="#calender" data-toggle="pill" class="nav-link"> Calender Event</a>
+                                </li>
+
+                                <li class="nav-item">
+                                        <a href="#messages" data-toggle="pill" class="nav-link "> Messages</a>
+                                    </li>
+    </ul>
+      
+      <div class="tab-content">
+
+
+        
+        <div id="thinktank" class="tab-pane fade ">
+          <h3>Add Details</h3>
+            <form  [formGroup]="thinktankForm" (ngSubmit)="onSubmitThinktank(thinktankForm.value)">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                                <label>Title</label>
+                                <input type="text"  placeholder="Title" 
+                                          class="form-control"
+                                          formControlName="title"
+                                          >
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                            <div class="form-group">
+                                    <label>Upload Image</label>
+                                    <input type="file"  placeholder="Image"  
+                                              class="form-control"
+                                              formControlName="img"
+                                              (change)="onFileSelected($event)"
+                                              >
+                            </div>
+                        </div>
+                    
+                    
+                </div>
+                <div class="col-md-6">
+                        <div class="form-group">
+                                <label>Speaker</label>
+                                <input type="text"  placeholder="Speaker" 
+                                          class="form-control"
+                                          formControlName="speaker"
+                                          >
+                        </div>
+                    </div>
+
+                <div class="form-group">
+                        <label>Description</label>
+                        <textarea  rows="4" placeholder="Description" formControlName="desc" class="form-control" ></textarea>    
+                    </div>
+
+                    <img *ngIf="selectedImage!=null" [src]="imgSrc" width="350px" height="250px"> <br>
+                    <div class="row">
+                            <div class="col-md-12" style="position:absolute" >
+                                <button class="btn btn-success btn-lg btn-fill" type="submit" >Submit Think Tank Form</button>
+                            </div>
+                        </div>
+
+            
+                </form>
+
+
+            
+                <br><br>
+                <br><br>
+        </div>
+        
+        <div id="event" class="tab-pane fade">
+                <h3>Add Details</h3>
+                <form  [formGroup]="eventForm" (ngSubmit)="onSubmitEvent(eventForm.value)">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                    <label>Event Title</label>
+                                    <input type="text"  placeholder="Event Title" 
+                                              class="form-control"
+                                              formControlName="event"
+                                              >
+                            </div>
+                        </div>
+    
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                        <label>Upload Image</label>
+                                        <input type="file"  placeholder="Image"  
+                                                  class="form-control"
+                                                  formControlName="img"
+                                                  (change)="onFileSelected($event)"
+                                                  >
+                                </div>
+                            </div>
+                        
+                        
+                    </div>
+                    <div class="col-md-6">
+                            <div class="form-group">
+                                    <label>Date</label>
+                                    <input type="text"  placeholder="Enter Date (eg. 7th Oct 2019)" 
+                                              class="form-control"
+                                              formControlName="date"
+                                              >
+                            </div>
+                        </div>
+    
+                    <div class="form-group">
+                            <label>Description</label>
+                            <textarea  rows="4" placeholder="Description" formControlName="desc" class="form-control" ></textarea>    
+                        </div>
+    
+                        <img *ngIf="selectedImage!=null" [src]="imgSrc" width="350px" height="250px"> <br>
+                        <div class="row">
+                                <div class="col-md-12" style="position:absolute" >
+                                    <button class="btn btn-success btn-lg btn-fill" type="submit" >Submit Event Form</button>
+                                </div>
+                            </div>
+    
+                
+                    </form>
+    
+    
+                
+                    <br><br>
+                    <br><br>
+        </div>
+
+        <div id="blog" class="tab-pane fade">
+                <h3>Add Details</h3>
+                <form  [formGroup]="blogForm" (ngSubmit)="onSubmitBlog(blogForm.value)">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                    <label>Blog Title</label>
+                                    <input type="text"  placeholder="Event Title" 
+                                              class="form-control"
+                                              formControlName="title"
+                                              >
+                            </div>
+                        </div>
+    
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                        <label>Upload Image</label>
+                                        <input type="file"  placeholder="Image"  
+                                                  class="form-control"
+                                                  formControlName="img"
+                                                  (change)="onFileSelected($event)"
+                                                  >
+                                </div>
+                            </div>
+                        
+                        
+                    </div>
+                    <div class="col-md-6">
+                            <div class="form-group">
+                                    <label>Date</label>
+                                    <input type="text"  placeholder="Enter Date (eg. 7th Oct 2019)" 
+                                              class="form-control"
+                                              formControlName="date"
+                                              >
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                        <label>Author</label>
+                                        <input type="text"  placeholder="Author" 
+                                                  class="form-control"
+                                                  formControlName="author"
+                                                  >
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                    <div class="form-group">
+                                            <label>Intro</label>
+                                            <input type="text"  placeholder="Enter a short introduction of 140chars max" 
+                                                      class="form-control"
+                                                      formControlName="intro"
+                                                      >
+                                    </div>
+                                </div>
+                    <div class="form-group">
+                            <label>Description</label>
+                            <textarea  rows="4" placeholder="Description" formControlName="desc" class="form-control" ></textarea>    
+                        </div>
+    
+                        <img *ngIf="selectedImage!=null" [src]="imgSrc" width="350px" height="250px"> <br>
+                        <div class="row">
+                                <div class="col-md-12" style="position:absolute" >
+                                    <button class="btn btn-success btn-lg btn-fill" type="submit" >Submit Blog Form</button>
+                                </div>
+                            </div>
+    
+                
+                    </form>
+    
+    
+                
+                    <br><br>
+                    <br><br>
+        </div>
+        <div id="calender" class="tab-pane fade">
+                <h3>Add Details</h3>
+                <form  [formGroup]="calenderForm" (ngSubmit)="onSubmitCalender(calenderForm.value)">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                    <label>Event Title</label>
+
+                                    <input type="text"  placeholder="Event Title" 
+                                              class="form-control"
+                                              formControlName="event"
+                                              >
+                            </div>
+                        </div>
+    
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                        <label>Upload Image</label>
+                                        <input type="file"  placeholder="Image"
+                                                  class="form-control"
+                                                  formControlName="img"
+                                                  (change)="onFileSelected($event)"
+                                                  >
+                                </div>
+                            </div>
+                        
+                        
+                    </div>
+                    <div class="col-md-6">
+                            <div class="form-group">
+                                    <label>Time of Event</label>
+                                    <input type="text"  placeholder="Enter the time" 
+                                              class="form-control"
+                                              formControlName="time"
+                                              >
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                        <label>Month of Event</label>
+                                        <input type="text"  placeholder="Enter the month" 
+                                                  class="form-control"
+                                                  formControlName="month"
+                                                  >
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                    <div class="form-group">
+                                            <label>Day of Event</label>
+                                            <input type="text"  placeholder="Enter the day" 
+                                                      class="form-control"
+                                                      formControlName="day"
+                                                      >
+                                    </div>
+                                </div>
+                    <div class="form-group">
+                            <label>Description</label>
+                            <textarea  rows="4" placeholder="Description(Add place of event and other details)" formControlName="desc" class="form-control" ></textarea>    
+                        </div>
+    
+                        <img *ngIf="selectedImage!=null" [src]="imgSrc" width="350px" height="250px"> <br>
+                        <div class="row">
+                                <div class="col-md-12" style="position:absolute" >
+                                    <button class="btn btn-success btn-lg btn-fill" type="submit" >Submit Calender Form</button>
+                                </div>
+                            </div>
+    
+                
+                    </form>
+    
+    
+                
+                    <br><br>
+                    <br><br>
+              </div>
+
+              <div id="messages" class="tab-pane fade">
+                    <div class="container" *ngFor="let item of feedbackList.reverse()| slice:0:10;">
+                            <div class="row">
+                                    <div class="col-xs-12">
+                                        <h3> 
+                                            <b>{{item.name}}</b> says
+                                            <br>
+                                        </h3>
+                    
+                                        <div class="col-xs-12">
+                                                <h5>
+                                                    '{{item.message}}'
+                                                </h5>
+                                            </div>
+                                            <div class="col-xs-12" >
+                                                    <h5>
+                                                        Contact: {{item.email}}
+                                                    </h5>
+                                                </div>
+                                    </div>
+                                    <hr>
+                                </div> 
+                    </div>
+                  </div>
+      </div>

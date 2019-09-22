@@ -1,0 +1,60 @@
+<!--page title section-->
+<section class="inner_cover parallax-window" data-parallax="scroll" data-image-src="assets/img/snuu.jpeg">
+    <div class="overlay_dark"></div>
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+                <div class="inner_cover_content">
+                    <h3>
+                       Think Tank
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="breadcrumbs">
+            <ul>
+                <li><a href="#">Home</a>  |   </li>
+                <li><span>Think Tank</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--page title section end-->
+<!--events section -->
+<section class="pt100 pb100">
+    <div class="container" *ngFor="let item of ttList.reverse();">
+
+        <div class="event_box">
+            <div class="col-xs-12 md-auto">
+                    <img [src]=item.img alt="event" style="max-width: 100%; max-height: 100%" class="center">
+            </div>
+    
+            
+            <div class="event_info">
+                <div class="event_title">
+                    {{item.title}}
+                </div>
+                <div class="speakers">
+                    <strong>Speaker:</strong>
+                    <span> {{item.speaker}}</span>
+                </div>
+            
+            </div>
+            <div class="event_word">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 col-12">
+                        {{item.desc}}
+                    </div>
+                 
+                </div>
+            </div>
+
+        </div>
+
+       
+    </div>
+</section>
+<!--event section end -->
+
+

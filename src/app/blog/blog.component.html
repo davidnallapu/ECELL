@@ -1,0 +1,50 @@
+<!--page title section-->
+<section class="inner_cover parallax-window" data-parallax="scroll" data-image-src="assets/img/snuu.jpeg">
+    <div class="overlay_dark"></div>
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+                <div class="inner_cover_content">
+                    <h3>
+                       Our Blog
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="breadcrumbs">
+            <ul>
+                <li><a href="#">Home</a>   |  </li>
+                <li><span>Blog</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--page title section end-->
+<br><br><br>
+  <div class="container" *ngFor="let item of blogList.reverse();">
+        <div class="blog_card">
+                <div class="col-xs-12 md-auto"><img [src]=item.img alt="blog News" style="max-width: 100%; max-height: 100%"></div>
+
+                <div class="blog_box_data">
+                    <span class="blog_date">
+                        {{item.date}}
+                    </span>
+                    <div class="blog_meta">
+                        <span><a href="#">By {{item.author}}</a></span>  
+                    </div>
+                    <h5>
+                        {{item.title}}
+                    </h5>
+                    <p class="blog_word">
+                        {{item.intro}}
+                        
+                    </p>
+                    <a (click)="onclick(item)" class="readmore_btn">Read More</a>
+                    
+                    
+                    
+                </div>
+            </div>
+      
+    </div>
